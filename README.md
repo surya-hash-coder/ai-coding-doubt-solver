@@ -1,190 +1,152 @@
-🔥 AI CODING DOUBT SOLVER 🔥
-<div align="center">
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 🤖 AI Coding Doubt Solver
 
-⚡ Your Personal AI Code Assistant ⚡
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+> An intelligent full-stack web application that helps developers resolve coding doubts instantly using the power of AI.
 
-</div>
-📌 WHAT IS THIS?
-<div align="center">
-text
-┌─────────────────────────────────────────────┐
-│                                             │
-│   😕 You have code you don't understand    │
-│             ↓                               │
-│   🤖 AI explains it like a friend           │
-│             ↓                               │
-│   🎉 You become a better programmer!        │
-│                                             │
-└─────────────────────────────────────────────┘
-👉 Paste any code → Get instant AI help 👈
+---
 
-</div>
-✨ FEATURES (IN SIMPLE WORDS)
-<div align="center">
-#	FEATURE	WHAT IT DOES	EMOJI
-1	Code Editor	Type/paste code here	📝
-2	Explain Code	Tells you what each line means	📖
-3	Find Bugs	Finds mistakes in your code	🐛
-4	Improve Code	Makes your code better/faster	⚡
-5	Beginner Mode	Explains in super simple words	🌱
-</div>
-🎯 HOW TO USE (3 STEPS)
-<div align="center">
-STEP 1 → Select your language
-text
-[ Python ]  [ JavaScript ]  [ Java ]
-STEP 2 → Paste your code
-text
-┌─────────────────────────────────┐
-│ print("Hello World")            │
-│ def add(a,b):                   │
-│     return a + b                │
-└─────────────────────────────────┘
-STEP 3 → Click any button
-text
-[ 📖 Explain ] [ 🐛 Find Bugs ] [ ⚡ Improve ] [ 🌱 Beginner ]
-✅ THAT'S IT! AI WILL RESPOND BELOW
-</div>
-🛠️ TECHNOLOGY (Simple Version)
-<div align="center">
-Frontend (What you see)
-text
-📝 Monaco Editor  -  Same as VS Code
-🎨 Tailwind CSS   -  Makes it look pretty
-⚡ JavaScript      -  Makes it work
-Backend (Behind the scenes)
-text
-🟢 Node.js        -  Runs the server
-🚂 Express        -  Handles requests
-🤖 Ollama         -  Runs AI on your computer
-AI Models (Choose one)
-text
-💨 qwen2.5-coder:1.5b  -  Fast, works on 4GB RAM
-🚀 deepseek-coder:6.7b -  Powerful, needs 8GB RAM
-</div>
-📥 INSTALLATION (5 Minutes)
-<div align="center">
-⬇️ STEP 1: Download Code
-bash
-git clone https://github.com/surya-hash-coder/ai-coding-doubt-solver.git
-cd ai-coding-doubt-solver
-⚙️ STEP 2: Install Backend
-bash
+## 📌 Overview
+
+**AI Coding Doubt Solver** is a full-stack application that allows developers — from beginners to pros — to ask coding questions and receive accurate, context-aware AI-powered answers in real time. Whether you're stuck on a bug, confused about a concept, or need code explained, this tool has you covered.
+
+---
+
+## ✨ Features
+
+- 💬 Ask any coding question and get AI-generated answers instantly
+- 🧠 Powered by a large language model (LLM) via API
+- 🖥️ Clean and responsive frontend interface
+- ⚙️ Robust backend API handling requests and AI communication
+- 🔒 Secure environment variable management via `.env`
+- 🚀 Fullstack architecture with separate frontend and backend
+
+---
+
+## 🗂️ Project Structure
+
+```
+ai-coding-doubt-solve/
+├── frontend/           # Client-side application (UI)
+│   └── ...
+├── backend/            # Server-side logic & AI integration
+│   └── ...
+├── .gitignore          # Ignored files (node_modules, .env, etc.)
+└── README.md
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer     | Technology                        |
+|-----------|-----------------------------------|
+| Frontend  | HTML / CSS / JavaScript (or React)|
+| Backend   | Node.js / Express.js              |
+| AI        | AI/LLM API (e.g. OpenAI / Gemini) |
+| Config    | dotenv (`.env`)                   |
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18 or above recommended)
+- npm
+
+---
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/surya-hash-coder/ai-coding-doubt-solve.git
+cd ai-coding-doubt-solve
+```
+
+---
+
+### 2. Setup the Backend
+
+```bash
 cd backend
 npm install
-🧠 STEP 3: Install AI (Ollama)
-text
-👉 Go to https://ollama.ai
-👉 Download and install
-👉 Open Ollama app
-📦 STEP 4: Download AI Model
-bash
-ollama pull qwen2.5-coder:1.5b
-🚀 STEP 5: Start Server
-bash
-node server.js
-You should see: "Server running on http://localhost:3000"
+```
 
-🌐 STEP 6: Open App
-text
-👉 Go to frontend folder
-👉 Double-click index.html
-👉 It opens in browser!
-</div>
-🧪 TRY THESE EXAMPLES
-<div align="center">
-🐍 Python Example (Has bugs)
-python
-# Copy this and click "Find Bugs"
-def calculate_average(numbers)
-    total = 0
-    for num in numbers
-        total += num
-    return total / len(numbers)
+Create a `.env` file inside the `backend/` directory:
 
-scores = [85, 92, 78]
-print(calculate_average(scores))
-🟨 JavaScript Example (Has bugs)
-javascript
-// Copy this and click "Find Bugs"
-function greet(name) {
-    if name = "John" {  // Bug here!
-        return "Hello John";
-    }
-    return "Hello " + name;
-}
+```env
+API_KEY=your_ai_api_key_here
+PORT=5000
+```
 
-console.log(greet("John"));
-</div>
-❓ COMMON PROBLEMS & FIXES
-<div align="center">
-😵 PROBLEM	WHY?	✅ FIX
-"Model needs more memory"	Your RAM is low	Use smaller model: ollama pull qwen2.5-coder:1.5b
-"Cannot connect to Ollama"	AI app not running	Start Ollama from Start Menu
-"Port 3000 in use"	Another app using it	Change to 3001 in .env file
-"Model not found"	Didn't download AI	Run ollama pull qwen2.5-coder:1.5b
-"Nothing happens when I click"	Backend not running	Run node server.js in backend folder
-</div>
-📁 FOLDER STRUCTURE
-<div align="center">
-text
-📁 ai-coding-doubt-solver/
-│
-├── 📁 backend/                 # Server files
-│   ├── 📄 server.js            # Main server code
-│   ├── 📄 prompts.js           # AI instructions
-│   ├── 📄 package.json         # Dependencies list
-│   └── 📄 .env                 # Settings file
-│
-├── 📁 frontend/                # Website files
-│   ├── 📄 index.html           # Main page
-│   ├── 📄 script.js            # Website logic
-│   └── 📄 styles.css           # Styling
-│
-└── 📄 README.md                 # This file
-</div>
-🚀 QUICK START (One Command)
-<div align="center">
-bash
-git clone https://github.com/surya-hash-coder/ai-coding-doubt-solver.git && cd ai-coding-doubt-solver/backend && npm install && echo PORT=3000 > .env && echo MODEL_NAME=qwen2.5-coder:1.5b >> .env
-Then: Start Ollama → node server.js → Open index.html
+Start the backend server:
 
-</div>
-⭐ SHOW SUPPORT
-<div align="center">
-Like this project? Give it a star!
-text
-⭐ CLICK THE STAR BUTTON AT TOP ⭐
-Why star?
+```bash
+node index.js
+# or
+npm start
+```
 
-Saves project for later
+---
 
-Helps others find it
+### 3. Setup the Frontend
 
-Makes creator happy 😊
+```bash
+cd ../frontend
+npm install   # if applicable
+```
 
-👨‍💻 CREATOR
-Surya
-[ GitHub: @surya-hash-coder ]
+Open `index.html` in your browser, or if using a dev server:
 
-📞 NEED HELP?
-📧 Email: surya@example.com
-🐛 Found bug? Open issue on GitHub
-💡 Have idea? Share in Discussions
+```bash
+npm start
+```
 
-📜 LICENSE
-MIT License - Free to use, modify, share
+---
 
-<div align="center">
-🎉 THANKS FOR CHECKING THIS OUT! 🎉
-Made with ❤️ for beginners learning to code
+## 🔑 Environment Variables
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+| Variable  | Description                        |
+|-----------|------------------------------------|
+| `API_KEY` | Your AI provider API key           |
+| `PORT`    | Port for the backend server        |
 
-⭐ STAR THIS REPO ⭐
+> ⚠️ Never commit your `.env` file. It is already added to `.gitignore`.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+---
 
-</div>
+## 🚀 Usage
+
+1. Start the backend server
+2. Open the frontend in your browser
+3. Type your coding doubt or question in the input field
+4. Hit **Ask** and receive an AI-generated answer instantly!
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+1. Fork the repo
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add your feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is open source. Feel free to use, modify, and distribute it.
+
+---
+
+## 👨‍💻 Author
+
+**Surya** — [@surya-hash-coder](https://github.com/surya-hash-coder)
+
+---
+
+> ⭐ If you found this project helpful, please consider giving it a star on GitHub!
