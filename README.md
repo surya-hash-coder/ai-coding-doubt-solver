@@ -1,6 +1,6 @@
 # 🤖 AI Coding Doubt Solver
 
-> An intelligent full-stack web application that helps developers resolve coding doubts instantly using the power of AI.
+> An intelligent full-stack web application that helps developers resolve coding doubts instantly using **Ollama** running **Qwen 2.5** locally.
 
 ---
 
@@ -13,9 +13,10 @@
 ## ✨ Features
 
 - 💬 Ask any coding question and get AI-generated answers instantly
-- 🧠 Powered by a large language model (LLM) via API
+- 🧠 Powered by **Qwen 2.5** running locally via **Ollama** — no cloud API needed
+- 🔐 Fully private: your questions never leave your machine
 - 🖥️ Clean and responsive frontend interface
-- ⚙️ Robust backend API handling requests and AI communication
+- ⚙️ Robust backend API handling requests and Ollama communication
 - 🔒 Secure environment variable management via `.env`
 - 🚀 Fullstack architecture with separate frontend and backend
 
@@ -41,7 +42,8 @@ ai-coding-doubt-solve/
 |-----------|-----------------------------------|
 | Frontend  | HTML / CSS / JavaScript (or React)|
 | Backend   | Node.js / Express.js              |
-| AI        | AI/LLM API (e.g. OpenAI / Gemini) |
+| AI Model  | Qwen 2.5 (via Ollama)             |
+| Runtime   | Ollama (local LLM runner)         |
 | Config    | dotenv (`.env`)                   |
 
 ---
@@ -54,10 +56,23 @@ Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
 - npm
+- [Ollama](https://ollama.com/) — for running Qwen 2.5 locally
 
 ---
 
-### 1. Clone the Repository
+### 1. Install & Run Qwen 2.5 with Ollama
+
+```bash
+# Pull the Qwen 2.5 model
+ollama pull qwen2.5
+
+# Start the Ollama server (runs on http://localhost:11434 by default)
+ollama serve
+```
+
+---
+
+### 2. Clone the Repository
 
 ```bash
 git clone https://github.com/surya-hash-coder/ai-coding-doubt-solve.git
@@ -66,7 +81,7 @@ cd ai-coding-doubt-solve
 
 ---
 
-### 2. Setup the Backend
+### 3. Setup the Backend
 
 ```bash
 cd backend
@@ -76,8 +91,9 @@ npm install
 Create a `.env` file inside the `backend/` directory:
 
 ```env
-API_KEY=your_ai_api_key_here
 PORT=5000
+OLLAMA_URL=http://localhost:11434
+MODEL=qwen2.5
 ```
 
 Start the backend server:
@@ -90,7 +106,7 @@ npm start
 
 ---
 
-### 3. Setup the Frontend
+### 4. Setup the Frontend
 
 ```bash
 cd ../frontend
@@ -107,21 +123,24 @@ npm start
 
 ## 🔑 Environment Variables
 
-| Variable  | Description                        |
-|-----------|------------------------------------|
-| `API_KEY` | Your AI provider API key           |
-| `PORT`    | Port for the backend server        |
+| Variable      | Description                                      |
+|---------------|--------------------------------------------------|
+| `PORT`        | Port for the backend server (default: 5000)      |
+| `OLLAMA_URL`  | Ollama server URL (default: http://localhost:11434) |
+| `MODEL`       | Ollama model name to use (e.g. `qwen2.5`)        |
 
 > ⚠️ Never commit your `.env` file. It is already added to `.gitignore`.
+> 💡 No external API keys needed — Qwen 2.5 runs 100% locally via Ollama!
 
 ---
 
 ## 🚀 Usage
 
-1. Start the backend server
-2. Open the frontend in your browser
-3. Type your coding doubt or question in the input field
-4. Hit **Ask** and receive an AI-generated answer instantly!
+1. Make sure **Ollama is running** with Qwen 2.5 (`ollama serve`)
+2. Start the backend server (`npm start` inside `/backend`)
+3. Open the frontend in your browser
+4. Type your coding doubt or question in the input field
+5. Hit **Ask** and receive an AI-generated answer instantly — powered by Qwen 2.5 locally!
 
 ---
 
