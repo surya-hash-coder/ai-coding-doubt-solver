@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Coding Doubt Solver</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Monaco Editor -->
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.1/min/vs/editor/editor.main.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-6 max-w-7xl">
+        <!-- Header -->
+        <header class="mb-6">
+            <h1 class="text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+                AI Coding Doubt Solver
+            </h1>
+            <p class="text-center text-gray-400 mt-2">Paste your code and let AI help you understand it better</p>
+        </header>
+
+        <!-- Language Selector -->
+        <div class="mb-4">
+            <label class="block text-sm font-medium mb-2 text-gray-300">Select Language:</label>
+            <select id="language" class="bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="java">Java</option>
+            </select>
+        </div>
+
+        <!-- Code Editor -->
+        <div class="mb-4 border border-gray-700 rounded-lg overflow-hidden">
+            <div id="editor" class="h-96"></div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <button id="explainBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+                📖 Explain Code
+            </button>
+            <button id="bugsBtn" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+                🐛 Find Bugs
+            </button>
+            <button id="improveBtn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+                ⚡ Improve Code
+            </button>
+            <button id="beginnerBtn" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+                🌱 Beginner Mode
+            </button>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="hidden mb-4">
+            <div class="flex items-center justify-center space-x-2">
+                <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-500"></div>
+                <span class="text-gray-400">AI is thinking...</span>
+            </div>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="mb-4">
+            <h2 class="text-xl font-semibold mb-2 text-gray-300">AI Response:</h2>
+            <div id="output" class="bg-gray-800 border border-gray-700 rounded-lg p-4 min-h-[200px] max-h-96 overflow-y-auto font-mono text-sm">
+                <p class="text-gray-400">Click any button above to get AI analysis...</p>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="hidden bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg mb-4">
+        </div>
+    </div>
+
+    <!-- Monaco Editor Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.1/min/vs/loader.min.js"></script>
+    
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
