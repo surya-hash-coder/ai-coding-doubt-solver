@@ -1,190 +1,180 @@
-# 🤖 AI Coding Doubt Solver
+🤖 AI CODING DOUBT SOLVER
+📋 PROJECT OVERVIEW
+AI Coding Doubt Solver is a web application that helps beginners understand programming code using AI. It runs locally with Ollama and provides intelligent code analysis.
 
-<div align="center">
+✨ FEATURES
+Feature	Description
+📝 Code Editor	Monaco editor with syntax highlighting
+📖 Explain Code	AI explains each line of code
+🐛 Find Bugs	Detects syntax and logical errors
+⚡ Improve Code	Suggests optimized versions
+🌱 Beginner Mode	Simplified explanations
+🛠️ TECH STACK
+Frontend
+HTML5, CSS3, JavaScript
 
-![AI Coding Doubt Solver Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=AI%20Coding%20Doubt%20Solver&fontSize=40&fontAlignY=35&desc=Your%20Personal%20AI%20Programming%20Assistant&descAlignY=55)
+Tailwind CSS
 
-[![GitHub stars](https://img.shields.io/github/stars/surya-hash-coder/ai-coding-doubt-solver?style=for-the-badge&logo=github&color=yellow)](https://github.com/surya-hash-coder/ai-coding-doubt-solver/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/surya-hash-coder/ai-coding-doubt-solver?style=for-the-badge&logo=github&color=blue)](https://github.com/surya-hash-coder/ai-coding-doubt-solver/network)
-[![GitHub issues](https://img.shields.io/github/issues/surya-hash-coder/ai-coding-doubt-solver?style=for-the-badge&logo=github&color=red)](https://github.com/surya-hash-coder/ai-coding-doubt-solver/issues)
-[![GitHub license](https://img.shields.io/github/license/surya-hash-coder/ai-coding-doubt-solver?style=for-the-badge&logo=github&color=green)](https://github.com/surya-hash-coder/ai-coding-doubt-solver/blob/main/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge&logo=github)](https://github.com/surya-hash-coder/ai-coding-doubt-solver/pulls)
+Monaco Editor
 
-**A powerful web application that helps beginners understand programming code using AI**
+Backend
+Node.js
 
-[✨ Features](#✨-features) • [🚀 Demo](#🚀-demo) • [📥 Installation](#📥-installation) • [🎮 Usage](#🎮-usage) • [🛠️ Tech Stack](#🛠️-tech-stack) • [📚 Documentation](#📚-documentation) • [🤝 Contributing](#🤝-contributing)
+Express.js
 
-</div>
+Ollama (Local AI)
 
----
+AI Models
+qwen2.5-coder:1.5b (4GB RAM)
 
-## 📋 Table of Contents
+deepseek-coder:6.7b (8GB+ RAM)
 
-- [About The Project](#about-the-project)
-- [✨ Features](#✨-features)
-- [🚀 Demo](#🚀-demo)
-- [📥 Installation](#📥-installation)
-- [⚙️ Configuration](#⚙️-configuration)
-- [🎮 Usage Guide](#🎮-usage-guide)
-- [🛠️ Tech Stack](#🛠️-tech-stack)
-- [📁 Project Structure](#📁-project-structure)
-- [📚 API Reference](#📚-api-reference)
-- [🔧 Troubleshooting](#🔧-troubleshooting)
-- [🤝 Contributing](#🤝-contributing)
-- [📝 License](#📝-license)
-- [👨‍💻 Author](#👨‍💻-author)
-- [🌟 Acknowledgments](#🌟-acknowledgments)
+tinyllama (1GB RAM)
 
----
+📥 INSTALLATION STEPS
+Step 1: Clone Repository
+bash
+git clone https://github.com/surya-hash-coder/ai-coding-doubt-solver.git
+cd ai-coding-doubt-solver
+Step 2: Install Backend
+bash
+cd backend
+npm install
+Step 3: Install Ollama
+Download from: https://ollama.ai
 
-## 📖 About The Project
+Step 4: Pull AI Model
+bash
+# For 4GB RAM (Recommended)
+ollama pull qwen2.5-coder:1.5b
 
-**AI Coding Doubt Solver** is a beginner-friendly web application that leverages local AI models to help programmers understand code better. Whether you're just starting your coding journey or need help debugging complex logic, this tool provides instant, intelligent assistance.
+# For 8GB+ RAM
+ollama pull deepseek-coder:6.7b
+Step 5: Configure Environment
+Create backend/.env:
 
-### Why This Project?
-- 🎯 **Perfect for beginners** who struggle with code comprehension
-- 🔒 **Privacy-focused** - Runs locally with Ollama, no data sent to cloud
-- 💰 **Completely free** - No API costs, no subscriptions
-- 🚀 **Fast responses** - Local AI model provides quick analysis
-- 📚 **Educational** - Learn by understanding code line by line
+text
+PORT=3000
+OLLAMA_URL=http://localhost:11434
+MODEL_NAME=qwen2.5-coder:1.5b
+Step 6: Start Backend
+bash
+node server.js
+Step 7: Open Frontend
+Open frontend/index.html in browser
 
-### Use Cases
-- 🧑‍🎓 Students learning programming
-- 👨‍🏫 Teachers explaining code concepts
-- 👨‍💻 Developers debugging their code
-- 🔍 Anyone wanting to understand complex code
+🎮 HOW TO USE
+Select Language (Python/JavaScript/Java)
 
----
+Paste Code in editor
 
-## ✨ Features
+Click Feature Button:
 
-<div align="center">
+📖 Explain Code
 
-### 🎯 **Core Features**
+🐛 Find Bugs
 
-| Feature | Description | Icon |
-|---------|-------------|------|
-| **Code Editor** | Professional Monaco editor with syntax highlighting | 📝 |
-| **Explain Code** | AI explains each line in simple terms | 📖 |
-| **Find Bugs** | Detects syntax and logical errors | 🐛 |
-| **Improve Code** | Suggests optimized versions | ⚡ |
-| **Beginner Mode** | Ultra-simple explanations for newbies | 🌱 |
+⚡ Improve Code
 
-</div>
+🌱 Beginner Mode
 
-### 🎨 **Detailed Feature Breakdown**
+View Response in output panel
 
-#### 📝 **Code Editor**
-- 🎯 **Syntax highlighting** for Python, JavaScript, Java
-- 🔍 **Line numbers** and code folding
-- 📏 **Auto-indentation** and bracket matching
-- 🎨 **Dark theme** for reduced eye strain
-- 🔄 **Language switching** on the fly
+📝 EXAMPLE CODE TO TEST
+Python (with bugs)
+python
+class Student:
+    def __init__(self, name, grades):
+        self.name = name
+        self.grades = grades
+    
+    def calculate_average(self)
+        total = 0
+        for grade in self.grades
+            total += grade
+        return total / len(self.grades)
+JavaScript (with bugs)
+javascript
+function calculateAverage(numbers) {
+    let sum = 0
+    for (let i = 0; i <= numbers.length; i++) {
+        sum += numbers[i];
+    }
+    return sum / numbers.length;
+}
+📁 PROJECT STRUCTURE
+text
+ai-coding-doubt-solver/
+│
+├── backend/
+│   ├── server.js
+│   ├── prompts.js
+│   ├── package.json
+│   └── .env
+│
+├── frontend/
+│   ├── index.html
+│   ├── script.js
+│   ├── styles.css
+│   └── tailwind-config.js
+│
+├── README.md
+└── .gitignore
+🔧 TROUBLESHOOTING
+Common Issues
+Problem	Solution
+Model requires more memory	Use qwen2.5-coder:1.5b instead
+Cannot connect to Ollama	Start Ollama from system tray
+Port 3000 in use	Change PORT in .env file
+Git push permission denied	Add SSH key to GitHub
+Model not found	Run ollama pull model-name
+📊 SYSTEM REQUIREMENTS
+Component	Minimum	Recommended
+RAM	4 GB	8 GB
+Storage	2 GB	5 GB
+OS	Windows 10/macOS/Linux	Windows 11
+Node.js	v18.x	v20.x
+🌐 API ENDPOINTS
+Base URL: http://localhost:3000/api
+Endpoint	Method	Description
+/health	GET	Check server status
+/test-ollama	GET	Test AI connection
+/analyze	POST	Analyze code
+POST /analyze Request Body
+json
+{
+  "language": "python",
+  "code": "print('Hello')",
+  "feature": "explain"
+}
+🤝 CONTRIBUTING
+Fork repository
 
-#### 🤖 **AI-Powered Analysis**
+Create feature branch
 
-<details>
-<summary><b>📖 Explain Code Feature</b></summary>
+Commit changes
 
-- ✅ Line-by-line explanation
-- ✅ Concept breakdown
-- ✅ Simple analogies
-- ✅ Key terminology explained
-- ✅ Code purpose overview
-</details>
+Push to branch
 
-<details>
-<summary><b>🐛 Find Bugs Feature</b></summary>
+Open Pull Request
 
-- ✅ Syntax error detection
-- ✅ Logical error identification
-- ✅ Runtime error prediction
-- ✅ Fix suggestions
-- ✅ Prevention tips
-</details>
+📄 LICENSE
+MIT License - Free to use, modify, and distribute
 
-<details>
-<summary><b>⚡ Improve Code Feature</b></summary>
+👨‍💻 AUTHOR
+Surya
 
-- ✅ Optimized code version
-- ✅ Performance improvements
-- ✅ Best practices application
-- ✅ Clean code suggestions
-- ✅ Efficiency comparisons
-</details>
+GitHub: @surya-hash-coder
 
-<details>
-<summary><b>🌱 Beginner Mode</b></summary>
+Repository: https://github.com/surya-hash-coder/ai-coding-doubt-solver
 
-- ✅ No technical jargon
-- ✅ Real-world analogies
-- ✅ Step-by-step breakdown
-- ✅ Encouraging tone
-- ✅ Learning-focused
-</details>
+⭐ SUPPORT
+If you find this project helpful, please give it a star on GitHub!
 
-### 🎨 **UI/UX Features**
-- 📱 **Fully responsive** design (mobile, tablet, desktop)
-- 🎨 **Tailwind CSS** for beautiful styling
-- ⚡ **Loading indicators** for AI processing
-- 🛡️ **Error handling** with user-friendly messages
-- 🌈 **Gradient headers** and modern design
+🚀 QUICK START (One-Liner)
+bash
+git clone https://github.com/surya-hash-coder/ai-coding-doubt-solver.git && cd ai-coding-doubt-solver/backend && npm install && echo PORT=3000 > .env && echo MODEL_NAME=qwen2.5-coder:1.5b >> .env && echo OLLAMA_URL=http://localhost:11434 >> .env
+📞 CONTACT
+For issues or suggestions, create an issue on GitHub.
 
----
-
-## 🚀 Demo
-
-### 📸 **Screenshots**
-
-<div align="center">
-
-| Main Interface | Code Explanation |
-|:--------------:|:----------------:|
-| ![Main Interface](https://via.placeholder.com/400x250?text=Main+Interface) | ![Code Explanation](https://via.placeholder.com/400x250?text=Code+Explanation) |
-
-| Bug Detection | Beginner Mode |
-|:--------------:|:----------------:|
-| ![Bug Detection](https://via.placeholder.com/400x250?text=Bug+Detection) | ![Beginner Mode](https://via.placeholder.com/400x250?text=Beginner+Mode) |
-
-</div>
-
-### 🎥 **Video Demo**
-
-[![Watch the video](https://img.shields.io/badge/📺-Watch_Demo-red?style=for-the-badge)](https://example.com/demo-video)
-
-### 🌐 **Live Demo Links**
-
-| Component | Status | Link |
-|-----------|--------|------|
-| **Frontend** | ✅ Ready | [Open Frontend](https://your-vercel-app.vercel.app) |
-| **Backend** | ⚠️ Local Only | Requires Ollama locally |
-| **API Docs** | ✅ Available | [View API Docs](https://github.com/surya-hash-coder/ai-coding-doubt-solver/wiki) |
-
----
-
-## 📥 Installation
-
-### 📋 **Prerequisites**
-
-Before you begin, ensure you have the following installed:
-
-<div align="center">
-
-| Requirement | Version | Download |
-|-------------|---------|----------|
-| **Node.js** | v18.x or higher | [![Node.js](https://img.shields.io/badge/Node.js-18.x-339933?style=flat&logo=nodedotjs)](https://nodejs.org) |
-| **Ollama** | Latest | [![Ollama](https://img.shields.io/badge/Ollama-Latest-000000?style=flat&logo=ollama)](https://ollama.ai) |
-| **Git** | Latest | [![Git](https://img.shields.io/badge/Git-Latest-F05032?style=flat&logo=git)](https://git-scm.com) |
-| **Browser** | Chrome/Firefox/Edge | [![Chrome](https://img.shields.io/badge/Browser-Chrome-4285F4?style=flat&logo=googlechrome)](https://google.com/chrome) |
-
-</div>
-
-### 💻 **System Requirements**
-
-| Component | Minimum | Recommended |
-|-----------|---------|-------------|
-| **RAM** | 4 GB | 8 GB |
-| **Storage** | 2 GB free | 5 GB free |
-| **CPU** | Dual-core | Quad-core |
-| **OS** | Windows 10/macOS/Linux | Windows 11/macOS/Linux |
-
+Happy Coding! 🎉
